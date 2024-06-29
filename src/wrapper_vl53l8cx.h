@@ -16,5 +16,11 @@ class JARVIS_VL53L8CX : public VL53L8CX {
         return NewDataReady != 0;
       return false;
     }
+
+    uint8_t getResolution() {
+      uint8_t res;
+      this->vl53l8cx_get_resolution(&res);
+      return res;
+    }
 };
 #endif
